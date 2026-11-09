@@ -1,0 +1,62 @@
+# ============================================================
+#  首页各部分的文字
+#  规则：冒号后面空一格再写内容；含有冒号的句子用英文双引号包起来
+# ============================================================
+
+hero:
+  kicker: Open to every Emory student
+  title: We are Emory students working to make AI safe.
+  body: AI may become the most powerful technology we have built. We meet every week to understand the risks and what we can do about them.
+  button: Apply for spring
+  photo: assets/img/quad.jpg
+  photo_alt: Candler Library across the lawn of the Emory Quadrangle in spring
+  caption: The Quad, Emory University
+
+why:
+  kicker: Why it matters
+  title: AI does what we reward, not always what we meant.
+  body: In 2016, OpenAI trained an agent to play a boat-racing game by rewarding points. It found it could score more by circling forever than by finishing. Today's models are far more capable, and the gap is harder to see.
+  # 右边的小表格：每行一个 label 和 value
+  table:
+    - label: Reward
+      value: Points scored
+    - label: Intended
+      value: Win the race
+    - label: Learned
+      value: Circle and collect points
+    - label: Finished
+      value: Never
+      highlight: true
+
+fellowship_intro:
+  kicker: Start here
+  title: The Intro Fellowship
+  body: Eight weeks in a group of six. Short readings, a good dinner, and an honest discussion. No technical background needed.
+  link: See the syllabus
+  photo: assets/img/callaway.jpg
+  photo_alt: Callaway Center on the Emory Quadrangle under bare winter trees
+  caption: Callaway Center, Emory Quadrangle
+
+syllabus:
+  kicker: Fellowship syllabus
+  title: Eight weeks, one question each
+
+events:
+  kicker: Upcoming
+  title: Come to an event
+  body: Everything is free and open to the Emory community.
+  photo: assets/img/theology.jpg
+  photo_alt: Marble facade of the old Theology School building on the Emory Quadrangle
+  caption: Old Theology School, Emory Quadrangle
+
+team:
+  kicker: Organizers
+  title: Help us build this
+  body: We are looking for the first organizers.
+
+join:
+  kicker: Join
+  title: Apply for the spring cohort
+  body: It takes about five minutes.
+
+footer_credit: Campus photos by Marc Merlin, CC BY-SA 4.0, via Wikimedia Commons.

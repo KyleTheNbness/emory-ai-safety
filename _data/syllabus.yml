@@ -1,0 +1,44 @@
+# ============================================================
+#  Fellowship 课表：每周一块
+#  reading 是论文名（会显示成斜体），source 是作者和年份
+# ============================================================
+
+- week: Week 1
+  topic: Why could advanced AI be risky?
+  reading: The Alignment Problem from a Deep Learning Perspective
+  source: Ngo et al., 2022
+
+- week: Week 2
+  topic: Specification gaming
+  reading: Concrete Problems in AI Safety
+  source: Amodei et al., 2016
+
+- week: Week 3
+  topic: Goal misgeneralization
+  reading: Goal Misgeneralization in Deep RL
+  source: Langosco et al., 2022
+
+- week: Week 4
+  topic: Learning from feedback
+  reading: Constitutional AI
+  source: Bai et al., 2022
+
+- week: Week 5
+  topic: Looking inside the model
+  reading: Toy Models of Superposition
+  source: Elhage et al., 2022
+
+- week: Week 6
+  topic: Deception and hidden behavior
+  reading: Sleeper Agents
+  source: Hubinger et al., 2024
+
+- week: Week 7
+  topic: Evaluations and governance
+  reading: Model Evaluation for Extreme Risks
+  source: Shevlane et al., 2023
+
+- week: Week 8
+  topic: What you can work on
+  reading: ""
+  source: Research paths and choosing a first project

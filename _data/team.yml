@@ -1,0 +1,22 @@
+# ============================================================
+#  干部名单
+#  照片：把图片上传到 assets/img/team/ 文件夹，
+#  然后写 photo: assets/img/team/文件名.jpg（正方形照片效果最好）
+#  没有照片就写 photo: ""
+# ============================================================
+
+- name: Your name
+  role: Founder
+  photo: ""
+
+- name: Co-organizer
+  role: Co-founder
+  photo: ""
+
+- name: Technical Lead
+  role: Open role · Runs the technical track
+  photo: ""
+
+- name: Events Lead
+  role: Open role · Plans talks and socials
+  photo: ""

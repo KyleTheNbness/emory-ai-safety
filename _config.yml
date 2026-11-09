@@ -1,0 +1,21 @@
+# ============================================================
+#  网站基本信息（改完保存，网站约 1 分钟后自动更新）
+# ============================================================
+
+title: Emory AI Safety
+tagline: Student initiative at Emory University
+description: Emory students working to make AI safe.
+
+# 联系邮箱（显示在页脚）
+email: aisafety@example.edu
+
+# 报名表链接（比如 Google Form）。还没有就先留 "#"
+apply_url: "#"
+
+# 邮件列表 / GroupMe / Slack 链接。没有就留空 ""
+community_url: ""
+community_label: Join the mailing list
+
+# 以下是技术设置，一般不用改
+exclude:
+  - README.md

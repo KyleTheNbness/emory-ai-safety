@@ -1,0 +1,15 @@
+# ============================================================
+#  Fellowship 下面那三个项目
+# ============================================================
+
+- when: Semester
+  name: Technical Track
+  description: Interpretability and evaluations. Train small models and replicate recent papers. Python required.
+
+- when: Biweekly
+  name: Policy Group
+  description: Compute governance, AI law, and how labs make safety commitments. Open to all majors.
+
+- when: Ongoing
+  name: Research Projects
+  description: Small teams working on real questions, with mentors from the wider AI safety field.

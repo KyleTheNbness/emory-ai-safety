@@ -17,5 +17,7 @@ community_url: ""
 community_label: Join the mailing list
 
 # 以下是技术设置，一般不用改
+url: https://kylethenbness.github.io
+baseurl: /emory-ai-safety
 exclude:
   - README.md

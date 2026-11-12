@@ -1,0 +1,15 @@
+# ============================================================
+#  "What we offer" 四项。想加一项就复制一整块
+# ============================================================
+
+- title: Research opportunities
+  body: Join a project team after the fellowship. Replicate a paper, build an eval, or dig into a model's internals, with support from organizers.
+
+- title: Speaker events
+  body: Talks and Q&As with people working on AI safety at labs, universities, and research orgs.
+
+- title: Career advice
+  body: Guidance on internships, research programs like MATS and SPAR, grad school, and how to break into the field.
+
+- title: A wider network
+  body: We connect with AI safety groups at Emory and beyond, so you meet the people already doing this work.

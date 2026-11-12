@@ -9,27 +9,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
+  <meta name="theme-color" content="#0B0B0D">
   <meta property="og:title" content="{{ site.title }}">
   <meta property="og:description" content="{{ site.description }}">
-  <meta property="og:image" content="{{ t.hero.photo | absolute_url }}">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<header class="top">
+<header class="top" id="top-bar">
   <div class="wrap">
-    <a class="brand" href="#top">
-      <span class="mark" aria-hidden="true">AI</span>
-      <span><span class="brand-name">{{ site.title }}</span><span class="brand-sub">{{ site.tagline }}</span></span>
-    </a>
+    <a class="brand" href="#top">{% include logo.svg %}<span>{{ site.title }}</span></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="#programs">Programs</a></li>
+        <li><a href="#why">Why</a></li>
         <li><a href="#fellowship">Fellowship</a></li>
-        <li><a href="#events">Events</a></li>
+        {%- if site.data.events.size > 0 %}<li><a href="#events">Events</a></li>{% endif %}
         <li><a href="#join">Join</a></li>
       </ul>
     </nav>
@@ -37,100 +36,109 @@
 </header>
 
 <section class="hero" id="top">
-  <div class="wrap split">
-    <div class="copy">
-      <span class="kicker">{{ t.hero.kicker }}</span>
-      <h1>{{ t.hero.title }}</h1>
-      <p>{{ t.hero.body }}</p>
-      <div><a class="btn" href="{{ site.apply_url }}">{{ t.hero.button }}</a></div>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="kicker">{{ t.hero.kicker }}</span>
+    <h1>{{ t.hero.title }}</h1>
+    <p class="lede">{{ t.hero.body | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    <div class="cta">
+      <a class="btn apply-btn" href="#join">Applications open {{ site.apply_opens_label }}</a>
+      <a class="btn ghost" href="#fellowship">See the syllabus</a>
     </div>
-    <figure>
-      <img src="{{ t.hero.photo }}" alt="{{ t.hero.photo_alt }}" width="1800" height="1013">
-      <figcaption>{{ t.hero.caption }}</figcaption>
-    </figure>
   </div>
 </section>
 
-<section id="why">
-  <div class="wrap split">
-    <div class="copy">
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="head reveal">
       <span class="kicker">{{ t.why.kicker }}</span>
       <h2>{{ t.why.title }}</h2>
       <p>{{ t.why.body }}</p>
     </div>
-    <table class="example">
-      {%- for r in t.why.table %}
-      <tr><th scope="row">{{ r.label }}</th><td{% if r.highlight %} class="gap"{% endif %}>{{ r.value }}</td></tr>
-      {%- endfor %}
-    </table>
-  </div>
-</section>
+    <div class="cards">
 
-<section id="programs">
-  <div class="wrap">
-    <div class="split flip">
-      <div class="copy">
-        <span class="kicker">{{ t.fellowship_intro.kicker }}</span>
-        <h2>{{ t.fellowship_intro.title }}</h2>
-        <p>{{ t.fellowship_intro.body }}</p>
-        <div><a class="more" href="#fellowship">{{ t.fellowship_intro.link }}</a></div>
-      </div>
-      <figure>
-        <img src="{{ t.fellowship_intro.photo }}" alt="{{ t.fellowship_intro.photo_alt }}" width="1400" height="933">
-        <figcaption>{{ t.fellowship_intro.caption }}</figcaption>
-      </figure>
-    </div>
-    <div class="programs">
-      {%- for p in site.data.programs %}
-      <div class="program"><span class="kicker">{{ p.when }}</span><h3>{{ p.name }}</h3><p>{{ p.description }}</p></div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+      <article class="card reveal">
+        <span class="kicker">01 · Security</span>
+        <h3>Downloading a model can hack you.</h3>
+        <p>Many AI models are shared as Python pickle files, and loading one can run any code its author hid inside. In 2024, researchers at JFrog found about 100 malicious models on Hugging Face. One opened a backdoor on the machine that loaded it.</p>
+        <div class="term" id="term"><span class="c"># a model from a stranger</span>
+<span class="w">model</span> = torch.load(<span class="p">"sentiment-tiny.bin"</span>)<span class="out" id="term-out"></span></div>
+        <button class="mini" id="load-btn" type="button">Load the model</button>
+        <p class="src">Source: <a href="https://thehackernews.com/2024/03/over-100-malicious-aiml-models-found-on.html" target="_blank" rel="noopener">The Hacker News, Mar 2024</a></p>
+      </article>
 
-<section id="fellowship" class="tint">
-  <div class="wrap">
-    <div class="head">
-      <span class="kicker">{{ t.syllabus.kicker }}</span>
-      <h2>{{ t.syllabus.title }}</h2>
-    </div>
-    <div class="rows">
-      {%- for w in site.data.syllabus %}
-      <div class="row"><span class="when">{{ w.week }}</span><h3>{{ w.topic }}</h3><p class="detail">{% if w.reading != "" %}<cite>{{ w.reading }}</cite>, {% endif %}{{ w.source }}</p></div>
-      {%- endfor %}
+      <article class="card reveal">
+        <span class="kicker">02 · Speed</span>
+        <h3>AI is starting to help build AI.</h3>
+        <p>Labs already use their models to write code and run experiments. If each generation can make the next one better, progress could speed up faster than our ability to check it. Researchers call this recursive self-improvement.</p>
+        <div class="loop" id="loop" aria-label="Illustration of recursive self-improvement">
+          <span>AI v1</span><i>→</i><span>builds</span><i>→</i><span>AI v2</span><i>→</i><span>builds</span><i>→</i><span>AI v3</span>
+        </div>
+        <button class="mini" id="loop-btn" type="button">Run the loop</button>
+        <p class="src">An illustration, not a forecast.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="kicker">03 · Stakes</span>
+        <h3>What's your p(doom)?</h3>
+        <p>p(doom) is shorthand for the chance that AI leads to human extinction or something as bad. Guess first, then see what AI researchers said.</p>
+        <div class="slider">
+          <label for="pdoom" class="muted" style="font-size:.9rem">Your estimate</label>
+          <output id="pdoom-out" for="pdoom">10%</output>
+          <input type="range" id="pdoom" min="0" max="100" value="10" step="1">
+        </div>
+        <p class="verdict" id="verdict" aria-live="polite">Move the slider.</p>
+        <p class="src">Source: <a href="https://arxiv.org/abs/2401.02843" target="_blank" rel="noopener">Grace et al., 2024, survey of 2,778 AI researchers</a></p>
+      </article>
+
     </div>
   </div>
 </section>
 
-<section id="events">
-  <div class="wrap split">
-    <div class="copy">
-      <span class="kicker">{{ t.events.kicker }}</span>
-      <h2>{{ t.events.title }}</h2>
-      <p>{{ t.events.body }}</p>
-      <div class="rows" style="margin-top:12px">
-        {%- for e in site.data.events %}
-        <div class="row" style="grid-template-columns: 5.5rem minmax(0,1fr)"><span class="when">{{ e.date }}</span><div><h3>{{ e.title }}</h3><p class="detail">{{ e.details }}</p></div></div>
+<section class="block" id="fellowship">
+  <div class="wrap fellow">
+    <div class="head reveal">
+      <span class="kicker">{{ t.fellowship.kicker }}</span>
+      <h2>{{ t.fellowship.title }}</h2>
+      <p>{{ t.fellowship.body }}</p>
+    </div>
+    <div>
+      <div class="weeks">
+        {%- for w in site.data.weeks %}
+        <div class="week reveal"><span class="n">{{ w.week }}</span><div><h3>{{ w.topic }}</h3><p>{{ w.summary }}</p></div></div>
         {%- endfor %}
       </div>
+      <p class="note reveal">{{ t.fellowship.note }}</p>
     </div>
-    <figure>
-      <img src="{{ t.events.photo }}" alt="{{ t.events.photo_alt }}" width="1400" height="788">
-      <figcaption>{{ t.events.caption }}</figcaption>
-    </figure>
   </div>
 </section>
 
-<section id="team">
+{%- if site.data.events.size > 0 %}
+<section class="block" id="events">
   <div class="wrap">
-    <div class="head">
+    <div class="head reveal">
+      <span class="kicker">{{ t.events.kicker }}</span>
+      <h2>{{ t.events.title }}</h2>
+    </div>
+    <div class="events">
+      {%- for e in site.data.events %}
+      <div class="event reveal"><span class="n">{{ e.date }}</span><div><h3>{{ e.title }}</h3><p>{{ e.details }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="block" id="team">
+  <div class="wrap">
+    <div class="head reveal">
       <span class="kicker">{{ t.team.kicker }}</span>
       <h2>{{ t.team.title }}</h2>
       <p>{{ t.team.body }}</p>
     </div>
     <div class="team">
       {%- for m in site.data.team %}
-      <div class="person">
+      <div class="person reveal">
         <div class="portrait">{% if m.photo != "" %}<img src="{{ m.photo }}" alt="{{ m.name }}">{% else %}Photo{% endif %}</div>
         <h3>{{ m.name }}</h3><p>{{ m.role }}</p>
       </div>
@@ -139,23 +147,25 @@
   </div>
 </section>
 
-<section id="join" class="tint">
-  <div class="wrap join">
-    <div class="copy">
-      <span class="kicker">{{ t.join.kicker }}</span>
-      <h2>{{ t.join.title }}</h2>
-      <p>{{ t.join.body }}</p>
-      <div class="actions">
-        <a class="btn" href="{{ site.apply_url }}">Apply</a>
-        {%- if site.community_url != "" %}
-        <a class="btn btn-line" href="{{ site.community_url }}">{{ site.community_label }}</a>
-        {%- endif %}
-      </div>
+<section class="block" id="join">
+  <div class="wrap">
+    <div class="timeline reveal" id="timeline">
+      <div class="step" data-date="{{ site.apply_opens }}"><span class="n">{{ site.apply_opens_label }}</span><h3>Applications open</h3><p>Right after Thanksgiving.</p></div>
+      <div class="step" data-date="{{ site.apply_closes }}"><span class="n">{{ site.apply_closes_label }}</span><h3>Applications close</h3><p>One week into spring semester.</p></div>
+      <div class="step"><span class="n">{{ site.fellowship_starts_label }}</span><h3>Fellowship begins</h3><p>Six weekly sessions.</p></div>
     </div>
-    <div class="faq">
-      {%- for f in site.data.faq %}
-      <div><h3>{{ f.q }}</h3><p>{{ f.a }}</p></div>
-      {%- endfor %}
+    <div class="join">
+      <div class="copy reveal">
+        <span class="kicker">{{ t.join.kicker }}</span>
+        <h2>{{ t.join.title }}</h2>
+        <p>{{ t.join.body }}</p>
+        <div><a class="btn apply-btn" href="#join">Applications open {{ site.apply_opens_label }}</a></div>
+      </div>
+      <div class="faq reveal">
+        {%- for f in site.data.faq %}
+        <details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
+        {%- endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -163,9 +173,18 @@
 <footer>
   <div class="wrap">
     <span>{{ site.title }} · {{ site.email }}</span>
-    <span class="credit">{{ t.footer_credit }}</span>
+    <span>Independent student group at Oxford College of Emory University</span>
   </div>
 </footer>
 
+<script>
+  window.SITE = {
+    applyUrl: {{ site.apply_url | jsonify }},
+    opens: {{ site.apply_opens | date: "%Y-%m-%d" | jsonify }},
+    closes: {{ site.apply_closes | date: "%Y-%m-%d" | jsonify }},
+    opensLabel: {{ site.apply_opens_label | jsonify }}
+  };
+</script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>

@@ -2,19 +2,25 @@
 #  网站基本信息（改完保存，网站约 1 分钟后自动更新）
 # ============================================================
 
-title: Emory AI Safety
-tagline: Student initiative at Emory University
-description: Emory students working to make AI safe.
+title: Emory Oxford AI Safety
+tagline: Technical AI safety at Oxford College of Emory University
+description: A technical AI safety group at Oxford College of Emory University. Spring Fellowship applications open November 30.
 
 # 联系邮箱（显示在页脚）
 email: aisafety@example.edu
 
-# 报名表链接（比如 Google Form）。还没有就先留 "#"
-apply_url: "#"
-
-# 邮件列表 / GroupMe / Slack 链接。没有就留空 ""
-community_url: ""
-community_label: Join the mailing list
+# ---------- 报名 ----------
+# 报名表链接（比如 Google Form）。还没有就先留 ""
+apply_url: ""
+# 开放和截止日期，格式必须是 年-月-日
+# 网站会按日期自动切换按钮：开放前显示 "Applications open Nov 30"，
+# 开放期间显示 "Apply now"（需要上面填了 apply_url），截止后显示 "Applications closed"
+apply_opens: 2026-11-30
+apply_closes: 2027-01-18
+# 显示给访客看的日期文字
+apply_opens_label: Nov 30
+apply_closes_label: Jan 18
+fellowship_starts_label: Late January
 
 # 以下是技术设置，一般不用改
 url: https://kylethenbness.github.io

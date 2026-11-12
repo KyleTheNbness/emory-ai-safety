@@ -1,16 +1,10 @@
 # ============================================================
-#  活动列表：复制一整块（从 "- date" 开始）就能加一个活动
-#  删除一整块就删掉一个活动。按你想显示的顺序排列
+#  活动列表。现在是空的，所以网站上不会显示 Events 这一块。
+#  加第一个活动时，把下面 "[]" 删掉，再按这个格式写：
+#
+#  - date: Dec 4
+#    title: Info session
+#    details: 6:00 PM · Seney Hall 101
 # ============================================================
 
-- date: Nov 13
-  title: Info session
-  details: 6:00 PM · Room to be announced
-
-- date: Nov 20
-  title: "Reading: Sleeper Agents"
-  details: 7:00 PM · Room to be announced
-
-- date: Dec 4
-  title: "Workshop: probing a small model"
-  details: 6:30 PM · Bring a laptop
+[]

@@ -57,6 +57,7 @@
     <div class="head reveal">
       <span class="kicker">{{ t.offer.kicker }}</span>
       <h2>{{ t.offer.title }}</h2>
+      <p>{{ t.offer.mission }}</p>
     </div>
     <div class="offers">
       {%- for o in site.data.offers %}
@@ -182,6 +183,9 @@
         <h2>{{ t.join.title }}</h2>
         <p>{{ t.join.body }}</p>
         <div><a class="btn apply-btn" href="#join">Applications open {{ site.apply_opens_label }}</a></div>
+        {%- if site.interest_url != "" %}
+        <p>Not ready to apply? <a class="link" href="{{ site.interest_url }}" target="_blank" rel="noopener">Fill out our interest survey</a> to stay in the loop.</p>
+        {%- endif %}
       </div>
       <div class="faq reveal">
         {%- for f in site.data.faq %}
@@ -195,7 +199,7 @@
 <footer>
   <div class="wrap">
     {% include wordmark.html %}
-    <span>{{ site.full_name }} · {{ site.email }}</span>
+    <span>{{ site.full_name }}, a student organization at Oxford College of Emory University · {{ site.email }}</span>
   </div>
 </footer>
 

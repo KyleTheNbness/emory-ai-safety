@@ -5,10 +5,14 @@
 #  没有照片就写 photo: ""
 # ============================================================
 
-- name: Your name
-  role: Founder
-  photo: ""
+- name: Kyle Yu
+  role: Founder & President
+  photo: assets/img/team/kyle.jpg
 
-- name: Co-organizer
-  role: Co-founder
-  photo: ""
+- name: Daniel Hu
+  role: Vice President of Programs
+  photo: assets/img/team/daniel.jpg
+
+- name: William Ye
+  role: Vice President of Outreach
+  photo: assets/img/team/william.jpg

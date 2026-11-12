@@ -11,6 +11,7 @@ hero:
 offer:
   kicker: What we offer
   title: More than a reading group
+  mission: We introduce students with no background to AI safety, and give those who want to go further a platform to do it.
   foot: Open to every Oxford student. No background needed to start.
 
 why:
@@ -31,9 +32,9 @@ events:
 team:
   kicker: Organizers
   title: Who runs this
-  body: We are students at Oxford College. More organizers will come from the fellowship.
+  body: Three Oxford College students. Future organizers will come from the fellowship.
 
 join:
   kicker: Join
   title: Apply for the Spring Fellowship
-  body: No prior AI safety knowledge needed. Some Python helps but is not required.
+  body: No prior AI safety knowledge needed. We value passion and motivation over technical background.

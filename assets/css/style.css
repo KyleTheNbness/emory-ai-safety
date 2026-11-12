@@ -114,7 +114,7 @@ input[type="range"] { width: 100%; accent-color: var(--red); }
 .event p { color: var(--muted); font-size: 0.98rem; }
 
 /* Team */
-.team { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 840px; }
 .person { display: grid; gap: 4px; }
 .portrait { aspect-ratio: 1; max-width: 100%; border-radius: 2px; background: var(--surface); border: 1px solid var(--line); display: grid; place-items: center; color: var(--muted); font-size: var(--s-small); margin-bottom: 12px; overflow: hidden; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -155,7 +155,9 @@ footer .wrap { padding-block: 36px; display: flex; justify-content: space-betwee
   .fellow .head { position: static; }
   .step { padding-left: 22px; border-left: 1px solid var(--line); }
   .step::before { left: -5px; top: 28px; }
-  .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .person h3 { font-size: 0.95rem; }
+  .person p { font-size: 0.8rem; }
   .brand-sub { display: none; }
   nav ul { gap: 18px; }
 }
@@ -198,3 +200,7 @@ footer .wrap { padding-block: 36px; display: flex; justify-content: space-betwee
   .why-body { padding-left: 0; }
   .why summary { grid-template-columns: 2.2rem minmax(0, 1fr) auto; }
 }
+
+.link { color: var(--red); text-underline-offset: 3px; }
+.portrait img { filter: grayscale(.15); transition: filter .4s; }
+.person:hover .portrait img { filter: none; }

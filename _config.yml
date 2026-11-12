@@ -4,12 +4,15 @@
 
 title: Redline
 # 全称，显示在页脚
-full_name: Emory Oxford AI Safety
+full_name: Emory Oxford AI Safety Initiative
 tagline: AI safety at Emory Oxford
 description: Redline is a technical AI safety group at Oxford College of Emory University. Spring Fellowship applications open November 30.
 
 # 联系邮箱（显示在页脚）
 email: aisafety@example.edu
+
+# 兴趣问卷链接（填了就算成员，见章程第三条）。没有就留 ""
+interest_url: ""
 
 # ---------- 报名 ----------
 # 报名表链接（比如 Google Form）。还没有就先留 ""

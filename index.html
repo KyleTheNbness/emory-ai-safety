@@ -9,13 +9,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
-  <meta name="theme-color" content="#0B0B0D">
+  <meta name="theme-color" content="#111012">
   <meta property="og:title" content="{{ site.title }}">
   <meta property="og:description" content="{{ site.description }}">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;100,800;112,800&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -23,7 +23,7 @@
 
 <header class="top" id="top-bar">
   <div class="wrap">
-    <a class="brand" href="#top">{% include logo.svg %}<span>{{ site.title }}</span></a>
+    <a class="brand" href="#top" aria-label="{{ site.title }}">{% include wordmark.html %}<span class="brand-sub">{{ site.tagline }}</span></a>
     <nav aria-label="Main">
       <ul>
         <li><a href="#why">Why</a></li>
@@ -36,14 +36,18 @@
 </header>
 
 <section class="hero" id="top">
-  <canvas id="field" aria-hidden="true"></canvas>
   <div class="wrap">
     <span class="kicker">{{ t.hero.kicker }}</span>
     <h1>{{ t.hero.title }}</h1>
-    <p class="lede">{{ t.hero.body | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
-    <div class="cta">
-      <a class="btn apply-btn" href="#join">Applications open {{ site.apply_opens_label }}</a>
-      <a class="btn ghost" href="#fellowship">See the syllabus</a>
+    <div class="cut" aria-hidden="true">
+      <svg viewBox="0 0 1200 90" preserveAspectRatio="none"><path pathLength="1" d="M0 46 C 90 44, 170 50, 250 46 S 400 38, 455 47 L 498 22 L 522 74 L 548 30 L 566 52 C 640 48, 760 55, 880 45 S 1080 40, 1200 47"/></svg>
+    </div>
+    <div class="lower">
+      <p class="lede">{{ t.hero.body | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+      <div class="cta">
+        <a class="btn apply-btn" href="#join">Applications open {{ site.apply_opens_label }}</a>
+        <a class="btn ghost" href="#fellowship">See the syllabus</a>
+      </div>
     </div>
   </div>
 </section>
@@ -83,7 +87,7 @@
         <h3>What's your p(doom)?</h3>
         <p>p(doom) is shorthand for the chance that AI leads to human extinction or something as bad. Guess first, then see what AI researchers said.</p>
         <div class="slider">
-          <label for="pdoom" class="muted" style="font-size:.9rem">Your estimate</label>
+          <label for="pdoom">Your estimate</label>
           <output id="pdoom-out" for="pdoom">10%</output>
           <input type="range" id="pdoom" min="0" max="100" value="10" step="1">
         </div>
@@ -172,8 +176,8 @@
 
 <footer>
   <div class="wrap">
-    <span>{{ site.title }} · {{ site.email }}</span>
-    <span>Independent student group at Oxford College of Emory University</span>
+    {% include wordmark.html %}
+    <span>{{ site.full_name }} · {{ site.email }}</span>
   </div>
 </footer>
 

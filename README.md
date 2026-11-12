@@ -1,2 +1,2 @@
-# Emory AI Safety 网站
+# Emory Oxford AI Safety 网站
 

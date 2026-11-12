@@ -1,0 +1,27 @@
+# ============================================================
+#  Spring Fellowship 每周主题（按 BlueDot Technical AI Safety 课程）
+# ============================================================
+
+- week: Week 1
+  topic: The technical challenge with AI
+  summary: Why making powerful AI systems behave as intended is hard.
+
+- week: Week 2
+  topic: Training safer models
+  summary: RLHF, scalable oversight, and where today's methods fall short.
+
+- week: Week 3
+  topic: Detecting danger
+  summary: Evaluations and red-teaming to find dangerous capabilities before deployment.
+
+- week: Week 4
+  topic: Understanding AI
+  summary: Interpretability, from circuits inside a network to monitoring chains of thought.
+
+- week: Week 5
+  topic: Minimising harm
+  summary: Assume something goes wrong. Build defences and break the chain from mistake to catastrophe.
+
+- week: Week 6
+  topic: Start contributing
+  summary: Research directions, programs, and how to pick a first project.

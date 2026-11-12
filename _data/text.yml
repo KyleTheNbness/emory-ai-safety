@@ -4,59 +4,31 @@
 # ============================================================
 
 hero:
-  kicker: Open to every Emory student
-  title: We are Emory students working to make AI safe.
-  body: AI may become the most powerful technology we have built. We meet every week to understand the risks and what we can do about them.
-  button: Apply for spring
-  photo: assets/img/quad.jpg
-  photo_alt: Candler Library across the lawn of the Emory Quadrangle in spring
-  caption: The Quad, Emory University
+  kicker: Oxford College of Emory University
+  title: Understand the risks. Work on the fix.
+  body: "A technical AI safety group at Emory Oxford. **Spring Fellowship applications open November 30.**"
 
 why:
   kicker: Why it matters
-  title: AI does what we reward, not always what we meant.
-  body: In 2016, OpenAI trained an agent to play a boat-racing game by rewarding points. It found it could score more by circling forever than by finishing. Today's models are far more capable, and the gap is harder to see.
-  # 右边的小表格：每行一个 label 和 value
-  table:
-    - label: Reward
-      value: Points scored
-    - label: Intended
-      value: Win the race
-    - label: Learned
-      value: Circle and collect points
-    - label: Finished
-      value: Never
-      highlight: true
+  title: Three things worth losing sleep over
+  body: AI is getting more capable every few months. Here is why some of the people building it are worried.
 
-fellowship_intro:
-  kicker: Start here
-  title: The Intro Fellowship
-  body: Eight weeks in a group of six. Short readings, a good dinner, and an honest discussion. No technical background needed.
-  link: See the syllabus
-  photo: assets/img/callaway.jpg
-  photo_alt: Callaway Center on the Emory Quadrangle under bare winter trees
-  caption: Callaway Center, Emory Quadrangle
-
-syllabus:
-  kicker: Fellowship syllabus
-  title: Eight weeks, one question each
+fellowship:
+  kicker: Spring Fellowship
+  title: Six weeks. One topic a week.
+  body: We follow BlueDot Impact's Technical AI Safety curriculum. Read before each session, then meet in a small group to argue about it.
+  note: Fellows who bring real energy to the discussions are invited to join the organizing team.
 
 events:
-  kicker: Upcoming
-  title: Come to an event
-  body: Everything is free and open to the Emory community.
-  photo: assets/img/theology.jpg
-  photo_alt: Marble facade of the old Theology School building on the Emory Quadrangle
-  caption: Old Theology School, Emory Quadrangle
+  kicker: Events
+  title: Upcoming
 
 team:
   kicker: Organizers
-  title: Help us build this
-  body: We are looking for the first organizers.
+  title: Who runs this
+  body: We are students at Oxford College. More organizers will come from the fellowship.
 
 join:
   kicker: Join
-  title: Apply for the spring cohort
-  body: It takes about five minutes.
-
-footer_credit: Campus photos by Marc Merlin, CC BY-SA 4.0, via Wikimedia Commons.
+  title: Apply for the Spring Fellowship
+  body: No prior AI safety knowledge needed. Some Python helps but is not required.

@@ -8,10 +8,15 @@ hero:
   title: Know where the line is.
   body: "A technical AI safety group at Oxford College of Emory University. **Spring Fellowship applications open November 30.**"
 
+offer:
+  kicker: What we offer
+  title: More than a reading group
+  foot: Open to every Oxford student. No background needed to start.
+
 why:
   kicker: Why it matters
-  title: Three things worth losing sleep over
-  body: AI is getting more capable every few months. Here is why some of the people building it are worried.
+  title: Why we care
+  body: AI is getting more capable every few months. Three reasons some of the people building it are worried. Tap one to explore.
 
 fellowship:
   kicker: Spring Fellowship

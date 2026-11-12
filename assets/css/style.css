@@ -78,15 +78,6 @@ section.block > .wrap { padding-block: 120px; }
 .head { display: grid; gap: 16px; max-width: 42rem; margin-bottom: 56px; }
 .head p { color: var(--muted); }
 
-/* Why cards */
-.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 28px; display: grid; gap: 16px; align-content: start; min-width: 0; transition: border-color .3s; }
-.card:hover { border-color: rgba(255, 59, 46, 0.5); }
-.card p { color: var(--muted); font-size: 0.98rem; }
-.card .src { font-size: var(--s-small); }
-.card .src a { color: var(--muted); }
-.card .src a:hover { color: var(--red); }
-
 .term { font-family: var(--mono); font-size: 0.8rem; line-height: 1.6; background: #0B0A0C; border: 1px solid var(--line); border-radius: 2px; padding: 14px 16px; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--muted); }
 .term .c { color: #6A645E; }
 .term .p { color: var(--red); }
@@ -159,7 +150,7 @@ footer .wrap { padding-block: 36px; display: flex; justify-content: space-betwee
   section.block > .wrap { padding-block: 80px; }
   .hero .wrap { padding-block: 40px 88px; }
   .cut { height: 68px; }
-  .cards, .fellow, .join, .timeline { grid-template-columns: minmax(0, 1fr); }
+  .fellow, .join, .timeline { grid-template-columns: minmax(0, 1fr); }
   .fellow { gap: 32px; }
   .fellow .head { position: static; }
   .step { padding-left: 22px; border-left: 1px solid var(--line); }
@@ -174,4 +165,36 @@ footer .wrap { padding-block: 36px; display: flex; justify-content: space-betwee
   .js .cut path { animation: none; stroke-dashoffset: 0; }
   .js .hero .lower { animation: none; }
   * { transition: none !important; }
+}
+
+/* What we offer: a 2x2 grid divided by rules */
+.offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.offer { display: grid; gap: 10px; align-content: start; padding: 32px 32px 36px 0; border-bottom: 1px solid var(--line); }
+.offer:nth-child(even) { padding-left: 32px; padding-right: 0; border-left: 1px solid var(--line); }
+.offer .n { font-family: var(--mono); font-size: var(--s-small); color: var(--red); }
+.offer h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
+.offer p { color: var(--muted); max-width: 30rem; }
+.offer-foot { margin-top: 28px; font-family: var(--mono); font-size: var(--s-small); color: var(--muted); letter-spacing: 0.04em; }
+
+/* Why it matters: compact rows that expand */
+.whys { border-top: 1px solid var(--line); }
+.why { border-bottom: 1px solid var(--line); }
+.why summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 3rem minmax(0, 1fr) auto; gap: 16px; align-items: baseline; padding-block: 22px; }
+.why summary::-webkit-details-marker { display: none; }
+.why summary::after { content: "+"; font-family: var(--mono); color: var(--red); transition: transform .2s; }
+.why[open] summary::after { transform: rotate(45deg); }
+.why summary:hover h3 { color: var(--red); }
+.why summary h3 { transition: color .2s; }
+.why .n { font-family: var(--mono); font-size: var(--s-small); color: var(--red); }
+.why .sub { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+.why-body { display: grid; gap: 16px; padding: 0 0 28px 4rem; }
+.why-body > p { color: var(--muted); font-size: 0.98rem; max-width: 36rem; }
+.why-body .src { font-size: var(--s-small); }
+.why-body .src a { color: var(--muted); }
+.why-body .src a:hover { color: var(--red); }
+@media (max-width: 860px) {
+  .offers { grid-template-columns: minmax(0, 1fr); }
+  .offer, .offer:nth-child(even) { padding: 28px 0; border-left: 0; }
+  .why-body { padding-left: 0; }
+  .why summary { grid-template-columns: 2.2rem minmax(0, 1fr) auto; }
 }

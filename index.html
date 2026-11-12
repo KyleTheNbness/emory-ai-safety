@@ -26,7 +26,7 @@
     <a class="brand" href="#top" aria-label="{{ site.title }}">{% include wordmark.html %}<span class="brand-sub">{{ site.tagline }}</span></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="#why">Why</a></li>
+        <li><a href="#offer">What we offer</a></li>
         <li><a href="#fellowship">Fellowship</a></li>
         {%- if site.data.events.size > 0 %}<li><a href="#events">Events</a></li>{% endif %}
         <li><a href="#join">Join</a></li>
@@ -52,50 +52,18 @@
   </div>
 </section>
 
-<section class="block" id="why">
+<section class="block" id="offer">
   <div class="wrap">
     <div class="head reveal">
-      <span class="kicker">{{ t.why.kicker }}</span>
-      <h2>{{ t.why.title }}</h2>
-      <p>{{ t.why.body }}</p>
+      <span class="kicker">{{ t.offer.kicker }}</span>
+      <h2>{{ t.offer.title }}</h2>
     </div>
-    <div class="cards">
-
-      <article class="card reveal">
-        <span class="kicker">01 · Security</span>
-        <h3>Downloading a model can hack you.</h3>
-        <p>Many AI models are shared as Python pickle files, and loading one can run any code its author hid inside. In 2024, researchers at JFrog found about 100 malicious models on Hugging Face. One opened a backdoor on the machine that loaded it.</p>
-        <div class="term" id="term"><span class="c"># a model from a stranger</span>
-<span class="w">model</span> = torch.load(<span class="p">"sentiment-tiny.bin"</span>)<span class="out" id="term-out"></span></div>
-        <button class="mini" id="load-btn" type="button">Load the model</button>
-        <p class="src">Source: <a href="https://thehackernews.com/2024/03/over-100-malicious-aiml-models-found-on.html" target="_blank" rel="noopener">The Hacker News, Mar 2024</a></p>
-      </article>
-
-      <article class="card reveal">
-        <span class="kicker">02 · Speed</span>
-        <h3>AI is starting to help build AI.</h3>
-        <p>Labs already use their models to write code and run experiments. If each generation can make the next one better, progress could speed up faster than our ability to check it. Researchers call this recursive self-improvement.</p>
-        <div class="loop" id="loop" aria-label="Illustration of recursive self-improvement">
-          <span>AI v1</span><i>→</i><span>builds</span><i>→</i><span>AI v2</span><i>→</i><span>builds</span><i>→</i><span>AI v3</span>
-        </div>
-        <button class="mini" id="loop-btn" type="button">Run the loop</button>
-        <p class="src">An illustration, not a forecast.</p>
-      </article>
-
-      <article class="card reveal">
-        <span class="kicker">03 · Stakes</span>
-        <h3>What's your p(doom)?</h3>
-        <p>p(doom) is shorthand for the chance that AI leads to human extinction or something as bad. Guess first, then see what AI researchers said.</p>
-        <div class="slider">
-          <label for="pdoom">Your estimate</label>
-          <output id="pdoom-out" for="pdoom">10%</output>
-          <input type="range" id="pdoom" min="0" max="100" value="10" step="1">
-        </div>
-        <p class="verdict" id="verdict" aria-live="polite">Move the slider.</p>
-        <p class="src">Source: <a href="https://arxiv.org/abs/2401.02843" target="_blank" rel="noopener">Grace et al., 2024, survey of 2,778 AI researchers</a></p>
-      </article>
-
+    <div class="offers">
+      {%- for o in site.data.offers %}
+      <div class="offer reveal"><span class="n">{{ forloop.index | prepend: "0" }}</span><h3>{{ o.title }}</h3><p>{{ o.body }}</p></div>
+      {%- endfor %}
     </div>
+    <p class="offer-foot reveal">{{ t.offer.foot }}</p>
   </div>
 </section>
 
@@ -113,6 +81,56 @@
         {%- endfor %}
       </div>
       <p class="note reveal">{{ t.fellowship.note }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="why">
+  <div class="wrap fellow">
+    <div class="head reveal">
+      <span class="kicker">{{ t.why.kicker }}</span>
+      <h2>{{ t.why.title }}</h2>
+      <p>{{ t.why.body }}</p>
+    </div>
+    <div class="whys">
+
+      <details class="why reveal">
+        <summary><span class="n">01</span><span><h3>Downloading a model can hack you.</h3><span class="sub">Malicious AI models have been found on Hugging Face.</span></span></summary>
+        <div class="why-body">
+          <p>Many AI models are shared as Python pickle files, and loading one can run any code its author hid inside. In 2024, researchers at JFrog found about 100 malicious models on Hugging Face. One opened a backdoor on the machine that loaded it.</p>
+          <div class="term" id="term"><span class="c"># a model from a stranger</span>
+<span class="w">model</span> = torch.load(<span class="p">"sentiment-tiny.bin"</span>)<span class="out" id="term-out"></span></div>
+          <button class="mini" id="load-btn" type="button">Load the model</button>
+          <p class="src">Source: <a href="https://thehackernews.com/2024/03/over-100-malicious-aiml-models-found-on.html" target="_blank" rel="noopener">The Hacker News, Mar 2024</a></p>
+        </div>
+      </details>
+
+      <details class="why reveal">
+        <summary><span class="n">02</span><span><h3>AI is starting to help build AI.</h3><span class="sub">Progress could outrun our ability to check it.</span></span></summary>
+        <div class="why-body">
+          <p>Labs already use their models to write code and run experiments. If each generation can make the next one better, progress could speed up faster than our ability to check it. Researchers call this recursive self-improvement.</p>
+          <div class="loop" id="loop" aria-label="Illustration of recursive self-improvement">
+            <span>AI v1</span><i>→</i><span>builds</span><i>→</i><span>AI v2</span><i>→</i><span>builds</span><i>→</i><span>AI v3</span>
+          </div>
+          <button class="mini" id="loop-btn" type="button">Run the loop</button>
+          <p class="src">An illustration, not a forecast.</p>
+        </div>
+      </details>
+
+      <details class="why reveal">
+        <summary><span class="n">03</span><span><h3>What's your p(doom)?</h3><span class="sub">Guess, then compare with 2,778 AI researchers.</span></span></summary>
+        <div class="why-body">
+          <p>p(doom) is shorthand for the chance that AI leads to human extinction or something as bad.</p>
+          <div class="slider">
+            <label for="pdoom">Your estimate</label>
+            <output id="pdoom-out" for="pdoom">10%</output>
+            <input type="range" id="pdoom" min="0" max="100" value="10" step="1">
+          </div>
+          <p class="verdict" id="verdict" aria-live="polite">Move the slider.</p>
+          <p class="src">Source: <a href="https://arxiv.org/abs/2401.02843" target="_blank" rel="noopener">Grace et al., 2024, survey of 2,778 AI researchers</a></p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>

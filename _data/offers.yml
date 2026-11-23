@@ -2,8 +2,8 @@
 #  "What we offer" 四项。想加一项就复制一整块
 # ============================================================
 
-- title: Research opportunities
-  body: Join a project team after the fellowship. Replicate a paper, build an eval, or dig into a model's internals, with support from organizers.
+- title: Funded, mentored research
+  body: Every fellowship graduate can join a research project guided by a mentor, and we cover the compute. Replicate a paper, build an eval, or dig into a model's internals.
 
 - title: Speaker events
   body: Talks and Q&As with people working on AI safety at labs, universities, and research orgs.

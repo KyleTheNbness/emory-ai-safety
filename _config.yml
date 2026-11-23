@@ -16,7 +16,7 @@ interest_url: ""
 
 # ---------- 报名 ----------
 # 报名表链接（比如 Google Form）。还没有就先留 ""
-apply_url: ""
+apply_url: "https://airtable.com/app7Suz0NivUWqLWj/pagG2pzdMGEuaf9KX/form"
 # 开放和截止日期，格式必须是 年-月-日
 # 网站会按日期自动切换按钮：开放前显示 "Applications open Nov 30"，
 # 开放期间显示 "Apply now"（需要上面填了 apply_url），截止后显示 "Applications closed"

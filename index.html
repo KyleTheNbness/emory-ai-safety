@@ -15,7 +15,7 @@
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;100,800;112,800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;100,800;112,600;112,800&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -28,6 +28,7 @@
       <ul>
         <li><a href="#offer">What we offer</a></li>
         <li><a href="#fellowship">Fellowship</a></li>
+        <li><a href="#audience">Who it's for</a></li>
         {%- if site.data.events.size > 0 %}<li><a href="#events">Events</a></li>{% endif %}
         <li><a href="#join">Join</a></li>
       </ul>
@@ -69,19 +70,47 @@
 </section>
 
 <section class="block" id="fellowship">
-  <div class="wrap fellow">
+  <div class="wrap">
     <div class="head reveal">
       <span class="kicker">{{ t.fellowship.kicker }}</span>
       <h2>{{ t.fellowship.title }}</h2>
       <p>{{ t.fellowship.body }}</p>
+      <ul class="facts">
+        {%- for f in t.fellowship.facts %}<li>{{ f }}</li>{% endfor %}
+      </ul>
     </div>
-    <div>
-      <div class="weeks">
-        {%- for w in site.data.weeks %}
-        <div class="week reveal"><span class="n">{{ w.week }}</span><div><h3>{{ w.topic }}</h3><p>{{ w.summary }}</p></div></div>
-        {%- endfor %}
+    <div class="weeks">
+      <div class="week-head" aria-hidden="true"><span></span><span class="lens">Technical</span><span class="lens">Governance</span></div>
+      {%- for w in site.data.weeks %}
+      <div class="week reveal">
+        <span class="n">{{ w.week }}</span>
+        <div class="side"><span class="lens-m">Technical</span><h3>{{ w.tech }}</h3><p>{{ w.tech_note }}</p></div>
+        <div class="side"><span class="lens-m">Governance</span><h3>{{ w.gov }}</h3><p>{{ w.gov_note }}</p></div>
+        <p class="discuss"><span>Discuss</span>{{ w.discuss }}</p>
       </div>
-      <p class="note reveal">{{ t.fellowship.note }}</p>
+      {%- endfor %}
+    </div>
+    <p class="note reveal">{{ t.fellowship.note }}</p>
+  </div>
+</section>
+
+<section class="block" id="audience">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">{{ t.audience.kicker }}</span>
+      <h2>{{ t.audience.title }}</h2>
+      <p>{{ t.audience.body }}</p>
+    </div>
+    <div class="offers">
+      {%- for a in site.data.audience %}
+      <div class="offer reveal"><h3>{{ a.who }}</h3><p>{{ a.what }}</p></div>
+      {%- endfor %}
+    </div>
+    <div class="cover reveal">
+      <h3>{{ t.audience.cover_title }}</h3>
+      <ul class="chips">
+        {%- for c in site.data.topics %}<li>{{ c }}</li>{% endfor %}
+      </ul>
     </div>
   </div>
 </section>

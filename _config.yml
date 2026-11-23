@@ -25,7 +25,7 @@ apply_closes: 2027-01-18
 # 显示给访客看的日期文字
 apply_opens_label: Nov 30
 apply_closes_label: Jan 18
-fellowship_starts_label: Late January
+fellowship_starts_label: Week of Feb 1
 
 # 以下是技术设置，一般不用改
 url: https://kylethenbness.github.io

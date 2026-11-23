@@ -6,7 +6,7 @@
 hero:
   kicker: Oxford College of Emory University
   title: Know where the line is.
-  body: "A technical AI safety group at Oxford College of Emory University. **Spring Fellowship applications open November 30.**"
+  body: "An AI safety group at Oxford College of Emory University, covering both the technical and the governance side. **Spring Fellowship applications open November 30.**"
 
 offer:
   kicker: What we offer
@@ -21,9 +21,20 @@ why:
 
 fellowship:
   kicker: Spring Fellowship
-  title: Six weeks. One topic a week.
-  body: We follow BlueDot Impact's Technical AI Safety curriculum. Read before each session, then meet in a small group to argue about it.
+  title: Six weeks. Two lenses.
+  body: Each session pairs a technical topic with a governance question. We read together in the room, then discuss. No homework, no prerequisites.
+  facts:
+    - Starts the week of Feb 1
+    - 6 weekly sessions, 2–3 hours each
+    - Readings from BlueDot Impact
   note: Fellows who bring real energy to the discussions are invited to join the organizing team.
+
+audience:
+  kicker: Who it's for
+  title: Is this for you?
+  body: Probably. Here is what you'll get out of it, depending on where you're coming from.
+  cover_title: What we cover
+
 
 events:
   kicker: Events
@@ -37,4 +48,4 @@ team:
 join:
   kicker: Join
   title: Apply for the Spring Fellowship
-  body: No prior AI safety knowledge needed. We value passion and motivation over technical background.
+  body: No prior AI safety knowledge needed, technical or policy. We value passion and motivation over background.

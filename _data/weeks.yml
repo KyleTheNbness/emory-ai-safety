@@ -1,27 +1,47 @@
 # ============================================================
-#  Spring Fellowship 每周主题（按 BlueDot Technical AI Safety 课程）
+#  Spring Fellowship 每周内容：技术主题 + 治理主题 + 讨论题
+#  阅读材料来自 BlueDot 的 Technical AI Safety 和 Frontier AI Governance 课程
+#  句子里有冒号的，整句用英文双引号包起来
 # ============================================================
 
 - week: Week 1
-  topic: The technical challenge with AI
-  summary: Why making powerful AI systems behave as intended is hard.
+  tech: The technical challenge
+  tech_note: Why it's hard to make powerful AI do what we intend.
+  gov: What drives AI progress?
+  gov_note: Algorithms, data, and compute, the "AI triad" most policy tools target.
+  discuss: If you could regulate only one part of the triad, which would you pick?
 
 - week: Week 2
-  topic: Training safer models
-  summary: RLHF, scalable oversight, and where today's methods fall short.
+  tech: Training safer models
+  tech_note: RLHF, scalable oversight, and where they fall short.
+  gov: Can companies govern themselves?
+  gov_note: Lab commitments like Anthropic's Responsible Scaling Policy and OpenAI's Preparedness Framework.
+  discuss: When does self-governance work, and when doesn't it?
 
 - week: Week 3
-  topic: Detecting danger
-  summary: Evaluations and red-teaming to find dangerous capabilities before deployment.
+  tech: Evals and red-teaming
+  tech_note: Testing models for dangerous capabilities before release.
+  gov: Turning evals into rules
+  gov_note: How test results can trigger policy action.
+  discuss: If a model passes a dangerous-capability eval, is it safe? Who sets the bar?
 
 - week: Week 4
-  topic: Understanding AI
-  summary: Interpretability, from circuits inside a network to monitoring chains of thought.
+  tech: Interpretability
+  tech_note: Circuits inside networks and monitoring chains of thought.
+  gov: Transparency and accountability
+  gov_note: What laws like the EU AI Act require developers to disclose.
+  discuss: If developers can't fully explain a model, how can regulators hold anyone accountable?
 
 - week: Week 5
-  topic: Minimising harm
-  summary: Assume something goes wrong. Build defences and break the chain from mistake to catastrophe.
+  tech: Minimising harm
+  tech_note: Building defences for when things go wrong.
+  gov: National and international governance
+  gov_note: Export controls on AI chips, and summits like Bletchley in 2023.
+  discuss: Does AI governance need US–China cooperation? Is that realistic?
 
 - week: Week 6
-  topic: Start contributing
-  summary: Research directions, programs, and how to pick a first project.
+  tech: The research path
+  tech_note: MATS, SPAR, replicating papers, and our project teams.
+  gov: The policy path
+  gov_note: Policy research, think tanks, and government roles.
+  discuss: Which path pulls you, and what's one concrete next step?

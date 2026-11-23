@@ -46,7 +46,7 @@
     <div class="lower">
       <p class="lede">{{ t.hero.body | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
       <div class="cta">
-        <a class="btn apply-btn" href="#join">Applications open {{ site.apply_opens_label }}</a>
+        <a class="btn apply-btn" href="{{ site.apply_url }}" target="_blank" rel="noopener">Apply now</a>
         <a class="btn ghost" href="#fellowship">See the syllabus</a>
       </div>
     </div>
@@ -202,7 +202,7 @@
 <section class="block" id="join">
   <div class="wrap">
     <div class="timeline reveal" id="timeline">
-      <div class="step" data-date="{{ site.apply_opens }}"><span class="n">{{ site.apply_opens_label }}</span><h3>Applications open</h3><p>Right after Thanksgiving.</p></div>
+      <div class="step" data-date="{{ site.apply_opens }}"><span class="n">{{ site.apply_opens_label }}</span><h3>Applications open</h3><p>Apply any time before the deadline.</p></div>
       <div class="step" data-date="{{ site.apply_closes }}"><span class="n">{{ site.apply_closes_label }}</span><h3>Applications close</h3><p>One week into spring semester.</p></div>
       <div class="step"><span class="n">{{ site.fellowship_starts_label }}</span><h3>Fellowship begins</h3><p>Six weekly sessions.</p></div>
     </div>
@@ -211,7 +211,7 @@
         <span class="kicker">{{ t.join.kicker }}</span>
         <h2>{{ t.join.title }}</h2>
         <p>{{ t.join.body }}</p>
-        <div><a class="btn apply-btn" href="#join">Applications open {{ site.apply_opens_label }}</a></div>
+        <div><a class="btn apply-btn" href="{{ site.apply_url }}" target="_blank" rel="noopener">Apply now</a></div>
         {%- if site.interest_url != "" %}
         <p>Not ready to apply? <a class="link" href="{{ site.interest_url }}" target="_blank" rel="noopener">Fill out our interest survey</a> to stay in the loop.</p>
         {%- endif %}

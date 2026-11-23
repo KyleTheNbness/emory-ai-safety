@@ -6,7 +6,7 @@ title: Redline
 # 全称，显示在页脚
 full_name: Emory Oxford AI Safety Initiative
 tagline: AI safety at Emory Oxford
-description: Redline is a technical AI safety group at Oxford College of Emory University. Spring Fellowship applications open November 30.
+description: Redline is an AI safety group at Oxford College of Emory University. Spring Fellowship applications are open until January 18.
 
 # 联系邮箱（显示在页脚）
 email: aisafety@example.edu
@@ -20,10 +20,10 @@ apply_url: "https://airtable.com/app7Suz0NivUWqLWj/pagG2pzdMGEuaf9KX/form"
 # 开放和截止日期，格式必须是 年-月-日
 # 网站会按日期自动切换按钮：开放前显示 "Applications open Nov 30"，
 # 开放期间显示 "Apply now"（需要上面填了 apply_url），截止后显示 "Applications closed"
-apply_opens: 2026-11-30
+apply_opens: 2026-11-23
 apply_closes: 2027-01-18
 # 显示给访客看的日期文字
-apply_opens_label: Nov 30
+apply_opens_label: Nov 23
 apply_closes_label: Jan 18
 fellowship_starts_label: Week of Feb 1
 
